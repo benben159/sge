@@ -531,7 +531,7 @@ int sge_kill(int pid, u_long32 sge_signal, u_long32 job_id, u_long32 ja_task_id,
       FCLOSE(fp);
    }
 
-#if defined(DARWIN)
+#if defined(DARWIN) || defined(FREEBSD)
    sge_switch2start_user();  /* fixme: check return */
    if (kill(pid, direct_signal?sig:SIGTTIN)) {
       sge_switch2admin_user();  /* fixme: check return */

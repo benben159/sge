@@ -34,6 +34,7 @@
 
 #include <sys/types.h>
 
+#include "basis_types.h"
 /* The unused layers/classes below are kept for future or temporary use. */
 
 /* different layers for monitoring */

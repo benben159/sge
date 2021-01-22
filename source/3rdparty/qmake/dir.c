@@ -58,7 +58,7 @@ const char *vmsify (const char *name, int type);
 # define REAL_DIR_ENTRY(dp) (dp->d_ino != 0)
 # define FAKE_DIR_ENTRY(dp) (dp->d_ino = 1)
 #endif /* POSIX */
-
+
 #ifdef __MSDOS__
 #include <ctype.h>
 #include <fcntl.h>
@@ -67,6 +67,8 @@ const char *vmsify (const char *name, int type);
 #ifndef _USE_LFN
 #define _USE_LFN 0
 #endif
+
+#define __ptr_t void *
 
 static const char *
 dosify (const char *filename)

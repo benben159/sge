@@ -135,6 +135,7 @@ int inc_qmaster_heartbeat(char *file, int write_timeout , int* beat_value) {
    struct timeval end_time;
    unsigned long write_time;
 
+   #if 0
    DENTER(TOP_LAYER, "inc_qmaster_heartbeat");
 
    if (file == NULL) {
@@ -206,6 +207,7 @@ int inc_qmaster_heartbeat(char *file, int write_timeout , int* beat_value) {
    }
 
    DEXIT;
+#endif
    return 0;
 FCLOSE_ERROR:
    ERROR((SGE_EVENT, MSG_HEART_CLOSE_ERROR_SS, file, strerror(errno))); 

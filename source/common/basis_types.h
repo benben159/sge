@@ -111,15 +111,18 @@ typedef enum {
 extern "C" {
 #endif
 
-#if defined(TARGET_64BIT) || _LP64 || __LP64__
-#  define u_long32 u_int
-#  define u_long64 u_long
-#elif defined(WIN32NATIVE)
+//#if defined(TARGET_64BIT) || _LP64 || __LP64__
+//#  define u_long32 u_int
+//#  define u_long64 u_long
+//#elif defined(WIN32NATIVE)
+#if defined(WIN32NATIVE)
 #  define u_long32 unsigned long
 #  define u_long32 u_long
 #elif defined(FREEBSD) || defined(NETBSD)
 #  define u_long32 uint32_t
 #  define u_long64 uint64_t
+#  define u_int uint32_t
+#  define u_long uint64_t
 #else
 #  define u_long64 unsigned long long
 #  define u_long32 u_long

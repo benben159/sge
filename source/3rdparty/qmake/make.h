@@ -30,7 +30,11 @@ this program.  If not, see <http://www.gnu.org/licenses/>.  */
 
 /* AIX requires this to be the first thing in the file.  */
 #if HAVE_ALLOCA_H
-# include <alloca.h>
+# if defined(FREEBSD)
+#  include <stdlib.h>
+# else
+#  include <alloca.h>
+# endif
 #else
 # ifdef _AIX
  #pragma alloca
